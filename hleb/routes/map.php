@@ -19,4 +19,4 @@ Route::get('/', view('default'))->name('homepage');
  * This route is used by Telegram to send updates to the bot.
  * The path includes the bot token to ensure that requests are genuinely from Telegram.
  */
-Route::post('/webhook/' . env('TELEGRAM_BOT_TOKEN'), 'WebhookController@handleUpdate')->name('webhook');
+Route::post('/webhook/' . env('TELEGRAM_BOT_TOKEN', ''), 'WebhookController@handleUpdate')->name('webhook');
