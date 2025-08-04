@@ -1,0 +1,58 @@
+{
+    "name": "phphleb/hleb",
+    "description": "PHP Framework HLEB2 is the foundation of the web application. Provides ease of development and application performance.",
+    "type": "project",
+    "keywords": [
+        "framework",
+        "hleb",
+        "hleb2",
+        "phphleb",
+        "php"
+    ],
+    "homepage": "https://hleb2framework.ru",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Foma Tuturov",
+            "email": "fomiash@yandex.ru"
+        }
+    ],
+    "require": {
+        "php": ">=8.2.0",
+        "phphleb/framework": "^2.0.0",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "autoload": {
+        "classmap": [
+            "app/",
+            "vendor/phphleb"
+        ],
+        "psr-4": {
+            "Phphleb\\": "vendor/phphleb/",
+            "Phphleb\\Hlogin\\": "vendor/phphleb/hlogin/",
+            "Hleb\\": "vendor/phphleb/framework/",
+            "App\\": "app/"
+        },
+        "exclude-from-classmap": [
+            "/storage/",
+            "/config/",
+            "/routes/",
+            "/vendor/phphleb/framework/Optional/",
+            "/vendor/phphleb/hlogin/Optional",
+            "/vendor/phphleb/hlogin/hleb-project",
+            "/vendor/phphleb/docs/match-directory"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+   "scripts": {
+    "post-create-project-cmd": [
+        "@php console project-setup-task --clear"
+    ],
+    "analyze": "phpstan analyse"
+},
+    "require-dev": {
+        "phpstan/phpstan": "^2.1"
+    }
+}

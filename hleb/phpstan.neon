@@ -1,0 +1,11 @@
+parameters:
+    level: 9
+    paths:
+        - app
+
+    ignoreErrors:
+        - '#Call to an undefined method Hleb\\\\.*::.*\(\)#'
+        - '#Access to an undefined property Hleb\\\\.*::.*#'
+        - '#Method Hleb\\Static\\.*::.*\(\) is static#'
+
+    reportUnmatchedIgnoredErrors: false
